@@ -6,10 +6,10 @@ import companyLogo from '../assets/Navlogo.png';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const FooterLink = ({ to, children }) => (
-    <Link to={to} className="relative inline-block text-gray-300 hover:text-brand-gold transition-colors duration-300 group">
-        {children}
-        <span className="absolute bottom-[-2px] left-0 w-full h-px bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-    </Link>
+  <Link to={to} className="relative inline-block text-gray-300 hover:text-brand-gold transition-colors duration-300 group">
+    {children}
+    <span className="absolute bottom-[-2px] left-0 w-full h-px bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
+  </Link>
 );
 
 const Footer = () => {
@@ -38,13 +38,13 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {/* Column 1: About */}
             <div className="space-y-4">
-               <Link to="/">
-                <img src={companyLogo} alt="Covenntterrains Logo" className="h-16 w-auto" />
+              <Link to="/">
+                <img src={companyLogo} alt="Covenant Terrains Logo" className="h-16 w-auto" />
               </Link>
               <p className="text-sm"></p>
               <div className="space-y-2 text-sm">
                 <p className="flex items-center"><FaMapMarkerAlt className="w-4 h-4 mr-3 text-brand-gold" />Accra, Ghana</p>
-                <p className="flex items-center"><FaEnvelope className="w-4 h-4 mr-3 text-brand-gold" />Covenntterrains@gmail.com</p>
+                <p className="flex items-center"><FaEnvelope className="w-4 h-4 mr-3 text-brand-gold" />covenantterrains@gmail.com</p>
                 <p className="flex items-center"><FaPhone className="w-4 h-4 mr-3 text-brand-gold" /> (+233) 560477622</p>
               </div>
             </div>
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
 
             {/* Column 3: Services */}
-             <div>
+            <div>
               <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
               <ul className="space-y-3 text-sm">
                 <li><FooterLink to="/Listings">Property on sale</FooterLink></li>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
 
           <div className="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-center items-center text-sm">
-            <p>&copy; {new Date().getFullYear()} Convenant Terreains. All Rights Reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Covenant Terrains. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

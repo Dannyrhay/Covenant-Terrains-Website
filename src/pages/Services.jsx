@@ -3,6 +3,7 @@ import HeroSlider from '../components/HeroSlider';
 
 
 import ServiceImage1 from '../assets/images/Services2.jpg';
+import SEO from '../components/SEO';
 
 // --- SVG Icons ---
 const ValuationIcon = () => (
@@ -17,7 +18,7 @@ const InvestmentIcon = () => (
   </svg>
 );
 const RelocationIcon = () => (
-  <svg className="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" ><g fill="none"><path fill="#fff" d="M5.14 13.47L9.06 7.1V3.18L5.14.73L1.22 3.18V7.1zm13.72 9.8l3.92-6.37v-3.92l-3.92-2.45l-3.92 2.45v3.92z"/><path fill="#bbd8ff" d="M5.14.73v2.45L7.1 4.454v1.96L5.14 7.59v5.88L9.06 7.1V3.18zm13.72 9.8v2.45l1.96 1.274v1.96l-1.96 1.176v5.88l3.92-6.37v-3.92z"/><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M6.12 22.29h-.98v-.98m8.82.98h.98m-3.92 0H12m-3.92 0h.98m-3.92-6.86v.98m0 1.96v.98m13.72 3.92l3.92-6.37v-3.92l-3.92-2.45l-3.92 2.45v3.92z"/><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m20.82 16.214l-1.96 1.176l-1.96-1.176v-1.96l1.96-1.274l1.96 1.274zM5.14 13.47L9.06 7.1V3.18L5.14.73L1.22 3.18V7.1z"/><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M7.1 6.414L5.14 7.59L3.18 6.414v-1.96L5.14 3.18L7.1 4.454z"/></g></svg>
+  <svg className="h-12 w-12 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" ><g fill="none"><path fill="#fff" d="M5.14 13.47L9.06 7.1V3.18L5.14.73L1.22 3.18V7.1zm13.72 9.8l3.92-6.37v-3.92l-3.92-2.45l-3.92 2.45v3.92z" /><path fill="#bbd8ff" d="M5.14.73v2.45L7.1 4.454v1.96L5.14 7.59v5.88L9.06 7.1V3.18zm13.72 9.8v2.45l1.96 1.274v1.96l-1.96 1.176v5.88l3.92-6.37v-3.92z" /><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M6.12 22.29h-.98v-.98m8.82.98h.98m-3.92 0H12m-3.92 0h.98m-3.92-6.86v.98m0 1.96v.98m13.72 3.92l3.92-6.37v-3.92l-3.92-2.45l-3.92 2.45v3.92z" /><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m20.82 16.214l-1.96 1.176l-1.96-1.176v-1.96l1.96-1.274l1.96 1.274zM5.14 13.47L9.06 7.1V3.18L5.14.73L1.22 3.18V7.1z" /><path stroke="#092f63" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M7.1 6.414L5.14 7.59L3.18 6.414v-1.96L5.14 3.18L7.1 4.454z" /></g></svg>
 );
 const LandBankingIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -61,33 +62,38 @@ const Services = () => {
 
   return (
     <div>
+      <SEO
+        title="Services"
+        description="Explore our comprehensive real estate services including brokerage, valuation, property management, and investment advisory."
+        path="/services"
+      />
       <HeroSlider slides={servicesSlide} />
 
       <section className="py-16 sm:py-24 bg-white">
         <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-black">What We Offer</h2>
-                <p className="text-slate-900 mt-2">From brokerage to construction, we provide a comprehensive suite of services.</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-black">What We Offer</h2>
+            <p className="text-slate-900 mt-2">From brokerage to construction, we provide a comprehensive suite of services.</p>
+          </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
-              {/* --- MODIFICATION START --- */}
-              {servicesList.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-6 rounded-lg shadow-lg transform
+            {/* --- MODIFICATION START --- */}
+            {servicesList.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg transform
                              transition-all duration-300 ease-in-out
                              hover:-translate-y-2 hover:bg-slate-200 hover:shadow-xl"
-                >
-                    {service.icon}
-                    <h3 className="text-xl font-bold mb-2 text-black">{service.title}</h3>
-                    <p className="text-slate-900">{service.description}</p>
-                </div>
-              ))}
-              {/* --- MODIFICATION END --- */}
+              >
+                {service.icon}
+                <h3 className="text-xl font-bold mb-2 text-black">{service.title}</h3>
+                <p className="text-slate-900">{service.description}</p>
+              </div>
+            ))}
+            {/* --- MODIFICATION END --- */}
 
-            </div>
+          </div>
         </div>
       </section>
     </div>

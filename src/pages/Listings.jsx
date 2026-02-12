@@ -4,6 +4,7 @@ import PropertyCard from '../components/PropertyCard';
 
 
 import ProjectImage1 from '../assets/images/Hero2.jpg';
+import SEO from '../components/SEO';
 
 const Listings = () => {
   const listingsSlide = [
@@ -25,15 +26,20 @@ const Listings = () => {
 
   return (
     <div className="bg-white">
+      <SEO
+        title="Projects"
+        description="Browse our exclusive listings of luxury homes, apartments, and prime land in Accra's most sought-after neighborhoods."
+        path="/listings"
+      />
       <HeroSlider slides={listingsSlide} />
 
       <section className="bg-gray-50 py-16 sm:py-24">
         <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {properties.map((property) => (
-                    <PropertyCard key={property.id} property={property} />
-                ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {properties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
