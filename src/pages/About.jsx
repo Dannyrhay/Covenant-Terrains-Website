@@ -46,7 +46,7 @@ const About = () => {
             className="w-full h-full object-cover"
           />
           {/* Subtle overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/35"></div>
         </div>
 
         {/* Legacy Title */}

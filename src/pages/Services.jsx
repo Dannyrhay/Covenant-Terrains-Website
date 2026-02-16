@@ -55,7 +55,7 @@ const Services = () => {
             className="w-full h-full object-cover"
           />
           {/* Subtle overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
         {/* Hero Title */}
