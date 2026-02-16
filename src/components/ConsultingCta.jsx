@@ -18,7 +18,7 @@ const ConsultingCta = () => {
                   Comprehensive Real Estate Consulting Services
                 </h2>
 
-                <div className="w-24 h-1 bg-amber-500 mx-auto my-4"></div>
+                <div className="w-24 h-1 bg-[#8B7355] mx-auto my-4"></div>
 
                 <p className="max-w-2xl mx-auto mb-8 text-white/90">
                   For expert guidance and tailored solutions, contact us now for comprehensive real estate consulting services.
@@ -26,7 +26,7 @@ const ConsultingCta = () => {
 
                 <Link
                   to="/contact"
-                  className="inline-block font-semibold text-white bg-amber-500 py-3 px-8 rounded-md hover:bg-amber-600 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
+                  className="inline-block font-semibold text-white bg-[#8B7355] py-3 px-8 rounded-md hover:bg-[#6d5a43] hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
                 >
                   Contact Now
                 </Link>

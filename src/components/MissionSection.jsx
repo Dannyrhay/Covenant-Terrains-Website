@@ -3,26 +3,26 @@ import React from 'react';
 // --- SVG Icons for the stats section ---
 
 const ClientIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-amber-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#8B7355] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
   </svg>
 );
 
 const WorldwideIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-amber-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#8B7355] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
 
 const ProjectsIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-amber-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#8B7355] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
   </svg>
 );
 
 const GrowthIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-amber-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-[#8B7355] mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
   </svg>
 );
@@ -74,7 +74,7 @@ const MissionSection = () => {
             <p className="text-gray-600 mb-8">
               We are a leading global real estate company headquartered in Ghana, specializing in commercial and luxury residential properties.
             </p>
-            <button className="font-semibold text-gray-800 bg-transparent py-3 px-8 border-2 border-amber-500 rounded-md hover:bg-amber-500 hover:text-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+            <button className="font-semibold text-gray-800 bg-transparent py-3 px-8 border-2 border-[#8B7355] rounded-md hover:bg-[#8B7355] hover:text-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
               All Projects
             </button>
           </div>
@@ -90,7 +90,7 @@ const MissionSection = () => {
               <div className="flex justify-center items-center">
                 {stat.icon}
               </div>
-              <h3 className="text-xl font-bold text-amber-600 mb-2">{stat.title}</h3>
+              <h3 className="text-xl font-bold text-[#8B7355] mb-2">{stat.title}</h3>
               <p className="text-gray-500 text-sm">{stat.description}</p>
             </div>
           ))}
