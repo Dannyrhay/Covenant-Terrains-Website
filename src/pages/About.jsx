@@ -1,150 +1,187 @@
-import React, { useState } from 'react';
-import HeroSlider from '../components/HeroSlider';
-import TeamSection from '../components/TeamSection';
 import SEO from '../components/SEO';
 
+// Import team member images
+import teamMember1 from '../assets/images/CEO2.jpeg';
+import teamMember2 from '../assets/images/e1.jpg';
+import teamMember3 from '../assets/images/projectMan.jpeg';
+
+// Import hero background
 import AboutImage1 from '../assets/images/About1.jpg';
 
-// --- Reusable Accordion Item Component ---
-const AccordionItem = ({ title, content, isOpen, onClick }) => {
-  const ChevronDownIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-
-  return (
-    <div className="border-b border-white/20">
-      <button
-        onClick={onClick}
-        className="w-full flex justify-between items-center text-left py-4 px-2 text-xl font-semibold focus:outline-none"
-      >
-        <span>{title}</span>
-        <ChevronDownIcon />
-      </button>
-      <div
-        className="overflow-hidden transition-all duration-500 ease-in-out"
-        style={{ maxHeight: isOpen ? '200px' : '0px' }}
-      >
-        <div className="p-4 pt-0 text-white/80">
-          {content}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
 const About = () => {
-  // State to manage which accordion item is open
-  const [openAccordion, setOpenAccordion] = useState(0); // Open the first item by default
-
-  const handleAccordionClick = (index) => {
-    setOpenAccordion(openAccordion === index ? null : index);
-  };
-
-  const aboutSlide = [
+  // Team members data
+  const teamMembers = [
     {
-      image: AboutImage1,
-      title: "About Covenant Terrains",
-      subtitle: "Building the future of real estate, one relationship at a time.",
+      name: "Kevin David Asante",
+      title: "Founder & CEO",
+      image: teamMember1,
+    },
+    {
+      name: "Kelly Bubune",
+      title: "Secretary",
+      image: teamMember2,
+    },
+    {
+      name: "Ursula Knoings",
+      title: "Project Manager",
+      image: teamMember3,
     },
   ];
-
-  const coreValues = [
-    {
-      title: "Honesty & Transparency",
-      content: "We believe that trust is earned. We operate with open communication and unwavering ethical standards, making sure you have full confidence in our advice and processes from start to finish."
-    },
-    {
-      title: "Commitment to Quality",
-      content: "We don't just meet standards—we set them. Our passion for quality drives us to deliver the best properties and services, with an unyielding attention to detail that ensures superior results."
-    },
-    {
-      title: "Dedicated Partnership",
-      content: "More than a transaction, it's a true partnership. We take the time to deeply understand your unique needs and commit to being a proactive, supportive guide focused solely on your success."
-    }
-  ];
-
-  const CheckIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-amber-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
-  );
-
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#F5F5F0]">
       <SEO
         title="About"
         description="Learn about Covenant Terrains — our mission, values, and the team driving Ghana's premium real estate market forward."
         path="/about"
       />
-      <HeroSlider slides={aboutSlide} />
 
-      {/* --- NEW: Redesigned "Our Journey" Section --- */}
-      <section className="py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop"
-                alt="Expert team discussing a project"
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute bottom-4 left-4 bg-white/90 p-4 rounded-md shadow-lg">
-                <h3 className="font-bold text-gray-800 text-xl">EXPERT TEAM</h3>
-              </div>
-            </div>
-            <div className="text-left">
-              <p className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-2">Connect with us</p>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Discover Our Journey So Far</h2>
-              <p className="text-gray-600 mb-6">
-                Founded in 2022, Covenant Terrains began with a simple mission: to revolutionize the real estate experience in Ghana and beyond. We saw a need for a client-focused agency that combined deep local expertise with a global perspective, built on a foundation of trust and innovation.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center"><CheckIcon /> Over 15 successful projects completed.</li>
-                <li className="flex items-center"><CheckIcon /> 3+ years of industry-leading experience.</li>
-              </ul>
-            </div>
-          </div>
+      {/* Hero Section - Our Legacy */}
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src={AboutImage1}
+            alt="Modern architecture"
+            className="w-full h-full object-cover"
+          />
+          {/* Subtle overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        {/* Legacy Title */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif italic text-white tracking-wide">
+            Our Legacy
+          </h1>
         </div>
       </section>
 
-      {/* --- NEW: Redesigned and Interactive "Core Values" Section --- */}
-      <section className=" bg-slate-900 text-white py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-1 text-left">
-              <p className="text-sm font-semibold uppercase tracking-wider mb-2 text-white/80">About Us</p>
-              <div className="space-y-2">
-                {coreValues.map((value, index) => (
-                  <h3
-                    key={index}
-                    className={`text-3xl font-bold transition-opacity duration-300 ${openAccordion === index ? 'opacity-100' : 'opacity-60'}`}
-                  >
-                    {value.title.toUpperCase()}
-                  </h3>
+      {/* Main Content Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+            {/* Left Column - Mission & History */}
+            <div className="space-y-12">
+              {/* Our Mission */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-wide uppercase mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-gray-600 leading-relaxed">
+                  Covenant Terrains is dedicated to shaping enduring environments. We blend architectural integrity with a deep respect for the natural landscape, creating spaces that foster community and elevate the human experience. Our commitment is to deliver exceptional real estate solutions that build lasting wealth for our clients.
+                </p>
+              </div>
+
+              {/* Our History */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-wide uppercase mb-6">
+                  Our History
+                </h2>
+                <p className="text-gray-600 leading-relaxed">
+                  Founded in 2014, our journey began with a single vision: to craft properties that stand the test of time. Over the years, we have established a portfolio of award-winning residential and commercial developments, driven by a commitment to quality, sustainability, and thoughtful design. Today, we continue to lead Ghana's real estate market with innovation and integrity.
+                </p>
+              </div>
+
+              {/* Our Values */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-wide uppercase mb-6">
+                  Our Values
+                </h2>
+                <ul className="space-y-4 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="text-[#8B7355] font-bold mr-3">01.</span>
+                    <div>
+                      <span className="font-semibold text-gray-800">Honesty & Transparency</span>
+                      <span className="mx-2">—</span>
+                      We operate with open communication and unwavering ethical standards.
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#8B7355] font-bold mr-3">02.</span>
+                    <div>
+                      <span className="font-semibold text-gray-800">Commitment to Quality</span>
+                      <span className="mx-2">—</span>
+                      We don't just meet standards; we set them.
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-[#8B7355] font-bold mr-3">03.</span>
+                    <div>
+                      <span className="font-semibold text-gray-800">Dedicated Partnership</span>
+                      <span className="mx-2">—</span>
+                      More than a transaction, it's a true partnership.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Right Column - Meet the Team */}
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-wide uppercase mb-8">
+                Meet The Team
+              </h2>
+
+              {/* Team Members Grid */}
+              <div className="grid grid-cols-3 gap-4 md:gap-6">
+                {teamMembers.map((member, index) => (
+                  <div key={index} className="text-center">
+                    {/* Circular Image */}
+                    <div className="relative w-full aspect-square mb-4">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover object-top rounded-full grayscale hover:grayscale-0 transition-all duration-500"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = `https://placehold.co/300x300/cccccc/ffffff?text=${member.name.split(' ')[0]}`;
+                        }}
+                      />
+                    </div>
+                    {/* Name & Title */}
+                    <h3 className="text-xs md:text-sm font-bold text-gray-900 uppercase leading-tight">
+                      {member.name} –
+                    </h3>
+                    <p className="text-xs md:text-sm text-[#8B7355] uppercase tracking-wide">
+                      {member.title}
+                    </p>
+                  </div>
                 ))}
               </div>
+
+              {/* Stats Section */}
+              <div className="mt-16 pt-12 border-t border-gray-300">
+                <div className="grid grid-cols-2 gap-8">
+                  <div>
+                    <span className="text-4xl md:text-5xl font-bold text-[#8B7355]">10K+</span>
+                    <p className="text-[#8B7355]/70 mt-2 text-sm">Global Clients</p>
+                  </div>
+                  <div>
+                    <span className="text-4xl md:text-5xl font-bold text-[#8B7355]">610+</span>
+                    <p className="text-[#8B7355]/70 mt-2 text-sm">Projects Completed</p>
+                  </div>
+                  <div>
+                    <span className="text-4xl md:text-5xl font-bold text-[#8B7355]">$16M</span>
+                    <p className="text-[#8B7355]/70 mt-2 text-sm">Portfolio Value</p>
+                  </div>
+                  <div>
+                    <span className="text-4xl md:text-5xl font-bold text-[#8B7355]">10+</span>
+                    <p className="text-[#8B7355]/70 mt-2 text-sm">Years Experience</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="lg:col-span-2">
-              {coreValues.map((value, index) => (
-                <AccordionItem
-                  key={index}
-                  title={value.title}
-                  content={value.content}
-                  isOpen={openAccordion === index}
-                  onClick={() => handleAccordionClick(index)}
-                />
-              ))}
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* The TeamSection can remain as is, or you can remove it if this page feels complete */}
-      {<TeamSection />}
+      {/* Divider Line */}
+      <div className="container mx-auto px-4 md:px-8 lg:px-16">
+        <hr className="border-gray-300" />
+      </div>
     </div>
   );
 };
