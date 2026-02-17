@@ -95,7 +95,7 @@ const Hero = ({ slides = [], title, subtitle, autoPlayInterval = 8000 }) => {
       ))}
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-20"></div>
+      <div className="absolute inset-0 bg-black/40 z-20"></div>
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-30">
