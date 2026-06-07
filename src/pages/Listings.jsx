@@ -69,6 +69,17 @@ const projects = [
   },
 ];
 
+const BENTO_LAYOUT = [
+  { index: 0, className: 'h-[300px] md:h-[400px] lg:h-[450px] md:col-span-1 lg:row-span-2' },
+  { index: 1, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+  { index: 2, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+  { index: 3, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+  { index: 4, className: 'h-[300px] md:h-[400px] lg:h-[450px] md:col-span-1 lg:row-span-2' },
+  { index: 5, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+  { index: 6, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+  { index: 7, className: 'h-[300px] md:h-[250px] lg:h-[215px]' },
+];
+
 // Filter categories
 const categories = [
   { id: 'all', label: 'View All' },
@@ -168,57 +179,18 @@ const Listings = () => {
         <div className="container mx-auto px-4 md:px-8 lg:px-16">
           {filteredProjects.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {/* Row 1 */}
-              {filteredProjects[0] && (
-                <ProjectCard
-                  project={filteredProjects[0]}
-                  className="h-[300px] md:h-[400px] lg:h-[450px] md:col-span-1 lg:row-span-2"
-                />
-              )}
-              {filteredProjects[1] && (
-                <ProjectCard
-                  project={filteredProjects[1]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
-              {filteredProjects[2] && (
-                <ProjectCard
-                  project={filteredProjects[2]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
-              {filteredProjects[3] && (
-                <ProjectCard
-                  project={filteredProjects[3]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
+              {BENTO_LAYOUT.map(({ index, className }) => {
+                const project = filteredProjects[index];
+                if (!project) return null;
 
-              {/* Row 2 */}
-              {filteredProjects[4] && (
-                <ProjectCard
-                  project={filteredProjects[4]}
-                  className="h-[300px] md:h-[400px] lg:h-[450px] md:col-span-1 lg:row-span-2"
-                />
-              )}
-              {filteredProjects[5] && (
-                <ProjectCard
-                  project={filteredProjects[5]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
-              {filteredProjects[6] && (
-                <ProjectCard
-                  project={filteredProjects[6]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
-              {filteredProjects[7] && (
-                <ProjectCard
-                  project={filteredProjects[7]}
-                  className="h-[300px] md:h-[250px] lg:h-[215px]"
-                />
-              )}
+                return (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    className={className}
+                  />
+                );
+              })}
             </div>
           ) : (
             <div className="text-center py-16">

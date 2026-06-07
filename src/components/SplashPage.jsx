@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 import PropTypes from 'prop-types';
 import companyLogo from '../assets/Navlogo2.png';
 
@@ -42,7 +42,7 @@ const SplashPage = ({ onAnimationComplete }) => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
+        <Motion.div
           className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -61,7 +61,7 @@ const SplashPage = ({ onAnimationComplete }) => {
           {/* Content Container */}
           <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
             {/* Logo with Glow Effect */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -69,7 +69,7 @@ const SplashPage = ({ onAnimationComplete }) => {
             >
               {/* Glow Effect Behind Logo */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
+                <Motion.div
                   className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#8B7355]/30 blur-2xl"
                   animate={{
                     scale: [1, 1.2, 1],
@@ -83,7 +83,7 @@ const SplashPage = ({ onAnimationComplete }) => {
                 />
               </div>
               {/* Logo Image */}
-              <motion.img
+              <Motion.img
                 src={companyLogo}
                 alt="Covenant Terrains Logo"
                 className="w-24 h-24 md:w-32 md:h-32 object-contain relative z-10"
@@ -96,30 +96,30 @@ const SplashPage = ({ onAnimationComplete }) => {
                   ease: 'easeInOut',
                 }}
               />
-            </motion.div>
+            </Motion.div>
 
             {/* Company Name */}
-            <motion.h1
+            <Motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-3xl md:text-4xl lg:text-5xl font-serif text-white tracking-[0.2em] mb-4"
             >
               COVENANT TERRAINS
-            </motion.h1>
+            </Motion.h1>
 
             {/* Tagline */}
-            <motion.p
+            <Motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-sm md:text-base text-[#8B7355] tracking-[0.15em] italic mb-12"
             >
               "BUILDING WEALTH FROM THE GROUND"
-            </motion.p>
+            </Motion.p>
 
             {/* Loading Bar */}
-            <motion.div
+            <Motion.div
               initial={{ opacity: 0, width: 0 }}
               animate={{ opacity: 1, width: '200px' }}
               transition={{ duration: 0.5, delay: 0.9 }}
@@ -128,7 +128,7 @@ const SplashPage = ({ onAnimationComplete }) => {
               {/* Background Bar */}
               <div className="w-48 md:w-56 h-[2px] bg-white/20 rounded-full overflow-hidden">
                 {/* Progress Bar */}
-                <motion.div
+                <Motion.div
                   className="h-full bg-gradient-to-r from-[#8B7355] to-[#c4a87c] rounded-full"
                   initial={{ width: '0%' }}
                   animate={{ width: `${loadingProgress}%` }}
@@ -136,31 +136,31 @@ const SplashPage = ({ onAnimationComplete }) => {
                 />
               </div>
               {/* Loading Text */}
-              <motion.p
+              <Motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
                 className="text-white/50 text-xs tracking-widest mt-4"
               >
                 {loadingProgress < 100 ? 'LOADING...' : 'WELCOME'}
-              </motion.p>
-            </motion.div>
+              </Motion.p>
+            </Motion.div>
           </div>
 
           {/* Decorative Corner Elements */}
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
             transition={{ delay: 1.2, duration: 0.8 }}
             className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-[#8B7355]/50"
           />
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
             transition={{ delay: 1.2, duration: 0.8 }}
             className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-[#8B7355]/50"
           />
-        </motion.div>
+        </Motion.div>
       )}
     </AnimatePresence>
   );

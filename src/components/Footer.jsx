@@ -19,15 +19,11 @@ const Footer = () => {
 
   useEffect(() => {
     const checkScrollTop = () => {
-      if (!showScroll && window.pageYOffset > 400) {
-        setShowScroll(true);
-      } else if (showScroll && window.pageYOffset <= 400) {
-        setShowScroll(false);
-      }
+      setShowScroll(window.pageYOffset > 400);
     };
     window.addEventListener('scroll', checkScrollTop);
     return () => window.removeEventListener('scroll', checkScrollTop);
-  }, [showScroll]);
+  }, []);
 
   const scrollToTop = () => {
     scroll.scrollToTop();
